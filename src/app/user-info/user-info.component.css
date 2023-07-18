@@ -1,0 +1,33 @@
+.user-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  left: 1.5%;
+  top: 0.2%;
+  transform: translateY(5%);
+  transform: translateX(-36%);
+  width: 250px;
+  height: 130px;
+  padding: 20px;
+  margin: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s; 
+}
+
+.user-info:hover {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.user-info p {
+  margin: 8px 0;
+}
+
+.user-info mat-icon {
+  margin-right: 2px;
+  
+}

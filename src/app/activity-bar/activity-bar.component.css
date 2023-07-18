@@ -1,0 +1,23 @@
+mat-form-field{
+    position: fixed;
+    top: 120px;
+    right: 30px;
+    transform: translate(-50%, 90%);
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .back-button {
+    width: auto;
+  }
+  
+  mat-form-field{
+    position: fixed;
+    border-top: 15px solid #AEBBFD;
+    border-radius: 5px;
+  }

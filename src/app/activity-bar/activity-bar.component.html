@@ -1,0 +1,30 @@
+<ng-container *ngIf="showActivitySelection">
+  <mat-form-field>
+    <mat-label>Select an activity</mat-label>
+    <mat-select [(value)]="selectedActivity">
+      <mat-option>None</mat-option>
+      <mat-option value="option1">Activity 1</mat-option>
+      <mat-option value="option2">Activity 2</mat-option>
+      <mat-option value="option3">Activity 3</mat-option>
+      <div class="button-container">
+         <button *ngIf="page === 'mentor'" (click)="goToTeamSelection()">Go to Team Selection</button>
+      </div>
+    </mat-select>
+  </mat-form-field>
+</ng-container>
+
+<ng-container *ngIf="showTeamSelection">
+  <mat-form-field>
+    <mat-label>Select a team</mat-label>
+    <mat-select [(value)]="selectedTeam">
+      <mat-option value="option1">Team 1</mat-option>
+      <mat-option value="option2">Team 2</mat-option>
+      <mat-option value="option3">Team 3</mat-option>
+      <div class="button-container">
+         <button (click)="goBackToActivitySelection()">Back to activity selection</button>
+      </div>
+    </mat-select>
+  </mat-form-field>
+</ng-container>
+
+

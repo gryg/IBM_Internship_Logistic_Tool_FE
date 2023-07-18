@@ -1,0 +1,16 @@
+.card {
+  background-color:#AEBBFD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 2px;
+  border-top: 3px solid #AEBBFD;
+  border-radius: 5px;
+  width: 40%;
+  transform: translateY(2%);
+}
+
+.card-title {
+  font-size: 15px; 
+}

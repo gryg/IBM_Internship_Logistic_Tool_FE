@@ -1,0 +1,24 @@
+<div class="toolbar-container">
+  <mat-toolbar class="custom-toolbar">
+    <mat-toolbar-row>
+      <img class="logo" src="assets/logo.png" alt="Logo">
+      <span class="title">Team Management</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleAdditionalButtons()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+
+    <div class="additional-buttons" *ngIf="showAdditionalButtons">
+      <button mat-icon-button class="edit-profile-button" aria-label="Edit Profile">
+        <span>Edit profile  </span>
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button class="logout-button" aria-label="Logout">
+        <span>Logout  </span>
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+</div>

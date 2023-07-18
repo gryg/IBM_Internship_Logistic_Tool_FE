@@ -1,0 +1,15 @@
+<div class="container2">
+  <button class="button_img"(click)="openAddPopup()"> <img src="./assets/add.png" /></button>
+  <div class="edit-profile-popup" *ngIf="showAddProfilePopup">
+    <form>
+      <label for="name">To: Activity name</label>
+      <input type="text" id="name" [(ngModel)]="name">
+
+      <label for="name">Team Name</label>
+      <input type="name2" id="name2" [(ngModel)]="name2">
+
+      <button class="button_img_add"(click)="AddProfile()"><img class="small-icon" src="./assets/play.png" /> </button>
+      <button class="close-button"(click)="closeAddPopup()">Close</button>
+    </form>
+  </div>
+</div>

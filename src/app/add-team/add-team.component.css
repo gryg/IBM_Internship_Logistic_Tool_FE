@@ -1,0 +1,83 @@
+.edit-profile-popup {
+  width: 200px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 70;
+  left: 40;
+ 
+  z-index: 9999;
+}
+
+.edit-profile-popup h2 {
+  margin-top: 0;
+}
+
+.edit-profile-popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-profile-popup label {
+  margin-bottom: 5px;
+}
+
+.edit-profile-popup input[type="text"],
+.edit-profile-popup input[type="email"],
+.edit-profile-popup input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.edit-profile-popup button {
+  margin-top: 10px;
+}
+
+form{
+  border: #AEBBFD;
+}
+
+input{
+  border: 6px solid #AEBBFD;
+  border-radius: 5px;
+}
+.small-icon {
+  font-size: 5px;
+}
+
+.container{
+  position: absolute;
+  top: 17%;
+  left: 32%;
+}
+
+.button_img img {
+  height: 30px; 
+  width: 30px; 
+}
+.button_img img {
+  height: 30px; 
+  width: 30px; 
+}
+
+.button_img{
+  transform: translateY(-70%);
+  transform: translateX(10%);
+}
+
+.button_img_add{
+  width: 30px;
+  height: 30px;
+  margin-left: 167px;
+}
+
+.small-icon{
+  width: 20px;
+  height: 20px;
+}
+
+.close-button{
+  width: 100px;
+  margin-left: 98px;
+
+}
