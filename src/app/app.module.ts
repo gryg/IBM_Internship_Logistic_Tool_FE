@@ -35,6 +35,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddTeamComponent } from './add-team/add-team.component';
 import { TeamGradeComponent } from './team-grade/team-grade.component';
+import { StudentGradeingComponent } from './student-gradeing/student-gradeing.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { TeamGradeComponent } from './team-grade/team-grade.component';
     EditProfileComponent,
     AddToActivityComponent,
     AddTeamComponent,
-    TeamGradeComponent
+    TeamGradeComponent,
+    StudentGradeingComponent
   ],
   imports: [
     BrowserModule,

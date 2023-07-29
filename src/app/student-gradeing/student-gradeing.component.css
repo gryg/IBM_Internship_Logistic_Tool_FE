@@ -1,0 +1,18 @@
+/* student-grading.component.css */
+.student-grading-popup {
+    /* Add your styles for the popup here */
+  }
+  
+  /* Customize the table styles */
+  .student-grading-popup table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .student-grading-popup th,
+  .student-grading-popup td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  

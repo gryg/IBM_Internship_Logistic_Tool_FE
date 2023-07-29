@@ -4,7 +4,7 @@
   flex-direction: column;
   position: fixed;
   align-items: center;
-  left: 1.5%;
+  left: 3%;
   top: 0.2%;
   transform: translateY(5%);
   transform: translateX(-36%);
@@ -37,3 +37,4 @@
 p{
   color:rgb(17, 3, 3);
 }
+

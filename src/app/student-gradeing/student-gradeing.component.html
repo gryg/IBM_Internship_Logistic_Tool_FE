@@ -1,0 +1,35 @@
+<div class="student-table">
+    <!-- Close Button -->
+  
+  
+    <!-- Table -->
+    <table mat-table [dataSource]="data" class="mat-elevation-z8">
+      <!-- Session Column -->
+      <ng-container matColumnDef="session">
+        <th mat-header-cell *matHeaderCellDef>Session</th>
+        <td mat-cell *matCellDef="let item">{{ item.session }}</td>
+      </ng-container>
+  
+      <!-- Grades Column -->
+      <ng-container matColumnDef="grades">
+        <th mat-header-cell *matHeaderCellDef>Grades</th>
+        <td mat-cell *matCellDef="let item">{{ item.grades }}</td>
+      </ng-container>
+  
+      <!-- Comments Column -->
+      <ng-container matColumnDef="comments">
+        <th mat-header-cell *matHeaderCellDef>Comments</th>
+        <td mat-cell *matCellDef="let item">{{ item.comments }}</td>
+      </ng-container>
+  
+      <!-- Attendance Column -->
+      <ng-container matColumnDef="attendance">
+        <th mat-header-cell *matHeaderCellDef>Attendance</th>
+        <td mat-cell *matCellDef="let item">{{ item.attendance }}</td>
+      </ng-container>
+  
+      <!-- Table Rows -->
+      <tr mat-header-row *matHeaderRowDef="['session', 'grades', 'comments', 'attendance']"></tr>
+      <tr mat-row *matRowDef="let item; columns: ['session', 'grades', 'comments', 'attendance']"></tr>
+    </table>
+  </div>
