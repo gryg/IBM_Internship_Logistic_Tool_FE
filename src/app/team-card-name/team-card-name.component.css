@@ -7,8 +7,9 @@
   padding: 2px;
   border-top: 3px solid #AEBBFD;
   border-radius: 5px;
-  width: 40%;
-  transform: translateY(2%);
+  width: 20%;
+  left:1.5%;
+  transform: translateY(280%);
 }
 
 .card-title {

@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+
+export interface TeamMember {
+  name: string;
+  email: string;
+}
+
 @Component({
   selector: 'app-add-team',
   templateUrl: './add-team.component.html',
@@ -10,6 +16,7 @@ export class AddTeamComponent {
   name: string = '';
   name2: string = '';
   email: string = '';
+  
 
   openAddPopup() {
     this.showAddProfilePopup = true;
@@ -33,5 +40,22 @@ export class AddTeamComponent {
     console.log('Profile Photo:', this.email);
 
     this.closeAddPopup();
+
+
+    if (this.teamMembers.length < 5) {
+      const newTeamMember = {
+        name: this.name2,
+        email: this.email,
+      };
+      this.teamMembers.push(newTeamMember);
+    } else {
+      console.log("Maximum team members limit reached (5).");
+    }
   }
+
+
+
+
+
+  teamMembers: any[] = [];
 }

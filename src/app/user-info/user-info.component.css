@@ -12,11 +12,13 @@
   height: 130px;
   padding: 20px;
   margin: 100px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #DDE6ED;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #DDE6ED;
   transition: box-shadow 0.3s; 
+  background-color: #DDE6ED;
+  z-index: 1;
 }
 
 .user-info:hover {
@@ -30,4 +32,8 @@
 .user-info mat-icon {
   margin-right: 2px;
   
+}
+
+p{
+  color:rgb(17, 3, 3);
 }

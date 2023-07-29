@@ -2,11 +2,11 @@
   width: 200px;
   padding: 20px;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(237, 230, 230, 0.851);
   position: absolute;
   top: 70;
-  left: 40;
- 
+  left: 20%;
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 9999;
 }
 
@@ -47,8 +47,8 @@ input{
 
 .container2{
   position: absolute;
-  top: 17%;
-  left: 38%;
+  top: 51%;
+  left: 60%;
 }
 
 .button_img img {
@@ -59,6 +59,7 @@ input{
 .button_img{
   transform: translateY(-70%);
   transform: translateX(2%);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .button_img_add{
   width: 30px;
@@ -75,3 +76,6 @@ input{
   margin-left: 98px;
 
 }
+label{
+  color: rgb(251, 253, 255);
+  }

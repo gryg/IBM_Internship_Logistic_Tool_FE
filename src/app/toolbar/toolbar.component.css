@@ -1,56 +1,58 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 .mat-toolbar-row {
-     display: flex;
-    align-items: center;
-  }
-    
+   display: flex;
+  align-items: center;
+}
+  
 .title {
-    margin-left: 8px;
-    margin-right: auto;
-  }
+  margin-left: 8px;
+  margin-right: auto;
+}
 
 .logo {
-    height: calc(100% - 10px);
-    max-height: 40px;
-    margin-right: 8px;
-  }
+  height: calc(100% - 10px);
+  max-height: 40px;
+  margin-right: 8px;
+}
 
 .toolbar-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    margin-bottom: 10px; 
-    padding: 6px; 
-    border-radius: 20px; 
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin-bottom: 10px; 
+  padding: 6px; 
+  border-radius: 20px; 
+}
 
-  .custom-toolbar {
-    background-color: #DDE6ED;
-  }
-  
-  .additional-buttons {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 8px;
-    z-index: 1;
-  }
-  
-  .additional-buttons button {
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 8px;
-  }
-  
-  
+.custom-toolbar {
+  background-color: #DDE6ED;
+}
+
+.additional-buttons {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 18%;
+  padding: 8px;
+  z-index: 1;
+  background-color: #DDE6ED;
+}
+
+.additional-buttons button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 8px;
+}
 
 
-  
-  
+
+.allign{
+  top:40%;
+  left:0%;
+}
+

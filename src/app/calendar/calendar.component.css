@@ -1,21 +1,19 @@
 .demo-inline-calendar-card {
-    width: 300px;
-  }
- 
-  mat-card{
-    position: fixed;
-    top: 40%;
-    left: 76%;
-    border: 15px solid #AEBBFD;
-    border-radius: 8px;
-  }
-  
-  mat-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background-color: #AEBBFD;
-  }
+  width: 300px;
+}
+
+mat-card{
+  position: fixed;
+  border: 15px solid #AEBBFD;
+  border-radius: 8px;
+}
+
+mat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  background-color: #AEBBFD;
+}
+

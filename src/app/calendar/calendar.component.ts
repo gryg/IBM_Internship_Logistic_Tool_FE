@@ -12,4 +12,14 @@ export class CalendarComponent {
   constructor(private dateAdapter: DateAdapter<Date>) {
     this.selected = null;
   }
+
+private buttonPushed = false;
+
+  get isButtonPushed(): boolean {
+    return this.buttonPushed;
+  }
+
+  setButtonPushed(value: boolean): void {
+    this.buttonPushed = value;
+  }
 }

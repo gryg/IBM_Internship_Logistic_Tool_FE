@@ -1,10 +1,13 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { DateAdapter } from '@angular/material/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 export interface Session {
   session: string;
   grade: string;
   comment: string;
+  attendance?: string;
 }
 
 export interface User {
@@ -20,6 +23,14 @@ export interface User {
   selector: 'app-user-table',
   templateUrl: './user-table.component.html',
   styleUrls: ['./user-table.component.css'],
+  template: `
+  <div>
+    <button (click)="onButtonClick()">Show Dynamic Component</button>
+    <ng-container *ngIf="isButtonPushed">
+      <app-dynamic-component></app-dynamic-component>
+    </ng-container>
+  </div>
+`
 })
 export class UserTableComponent implements OnInit {
   
@@ -31,7 +42,7 @@ export class UserTableComponent implements OnInit {
   selectedUser?: User;
 
 
-  constructor() {}
+ 
 
   ngOnInit(): void {
     this.tableDataSource = new MatTableDataSource<User>(this.dataSource || []);
@@ -39,32 +50,138 @@ export class UserTableComponent implements OnInit {
     if (this.page === 'leader') {
       this.displayedColumns.push('delete');
     } else if (this.page === 'mentor') {
-      this.displayedColumns.push('attendance','showSessions');
+      this.displayedColumns.push('showAttendance','showSessions');
     }
   }
 
 
-  onAttendanceChange(checked: boolean, user: User) {
-    //Updates the value in the data model
-    user.attendance = checked ? 'yes' : 'no';
-    // Or send a request to the server to update the value in the database
-    
-  }
+
+  attendanceChanges: { [sessionId: string]: string } = {};
+
+  gradeChanges: { [sessionId: string]: { grade: string; comment: string } } = {};
+
+
+ 
 
   onDeleteUser(user: User): void {
-    // add the logic to delete the user from the data source
-    // example: use a service to perform the delete from the backend
-    // and update the data source to reflect the changes
+ 
   }
 
-  onShowSessions(user: User) {
-    this.selectedUser = user;
-  }
 
-  hideSessions() {
-    this.selectedUser = undefined;
-  }
+  selectedActivity: string = '';
+  selectedTeam: string = '';
   
+  showActivitySelection = true;
+  showTeamSelection = false;
+
+  goToTeamSelection(): void {
+    this.showActivitySelection = false;
+    this.showTeamSelection = true;
+  }
+
+  goBackToActivitySelection(): void {
+    this.showActivitySelection = true;
+    this.showTeamSelection = false;
+  }
+selected: Date | null;
+selectedUserForGrade?: User;
+
+
+
+
+attendanceForm: FormGroup;
+gradeForm: FormGroup;
+
+constructor(private dateAdapter: DateAdapter<Date>, private fb: FormBuilder) {
+  this.selected = null;
+
+  this.attendanceForm = this.fb.group({
+    session: [''],
+    attendance: [''],
+  });
+
+  this.gradeForm = this.fb.group({
+    session: [''],
+    grade: [''],
+    comment: [''],
+  });
+}
+onShowAttendanceForm(user: User) {
+  this.selectedUser = user;
+  this.attendanceForm.patchValue({
+    session: '',
+    attendance: user.attendance || 'yes', 
+  });
+}
+
+
+onSubmitAttendance() {
+  if (this.selectedUser) {
+    const sessions = this.selectedUser.session || [];
+
+    for (const session of sessions) {
+      const sessionId = session.session;
+      const attendanceChange = this.attendanceChanges[sessionId];
+
+      if (attendanceChange !== undefined) {
+        // Update the attendance based on the change
+        session.attendance = attendanceChange === 'yes' ? 'yes' : 'no';
+      }
+    }
+
+    this.attendanceChanges = {}; // Reset changes
+    this.hideSessions();
+  }
+}
+
+onAttendanceChange(checked: boolean, session: Session) {
+  this.attendanceChanges[session.session] = checked ? 'yes' : 'no';
+}
+
+onSubmitGrade() {
+  if (this.selectedUserForGrade) {
+    for (const session of this.selectedUserForGrade.session || []) {
+      const gradeData = this.gradeChanges[session.session];
+      if (gradeData !== undefined) {
+        session.grade = gradeData.grade;
+        session.comment = gradeData.comment;
+      }
+    }
+
+    this.gradeChanges = {}; // Reset changes
+    this.hideGrade();
+  }
+}
+
+
+onGradeChange(session: Session) {
+  this.gradeChanges[session.session] = {
+    grade: session.grade,
+    comment: session.comment,
+  };
+}
+
+
+
+onShowSessions(user: User) {
+  this.selectedUser = user;
+  this.selectedUserForGrade = undefined; // Reset the selected user for grade
+}
+
+
+onShowGrade(user: User) {
+  this.selectedUserForGrade = user;
+  this.gradeChanges = {}; // Reset changes
+}
+
+hideSessions() {
+  this.selectedUser = undefined;
+}
+
+hideGrade() {
+  this.selectedUserForGrade = undefined;
+}
+
 
 }
 

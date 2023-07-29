@@ -1,4 +1,6 @@
 .card {
+   
+    
     background-color:#AEBBFD;
     display: flex;
     align-items: center;
@@ -6,18 +8,14 @@
     height: 40px;
     padding: 2px;
     border-top: 3px solid #AEBBFD;
-    border-radius: 8px;
-    transform: translateY(95%);
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    width: 10;
-
+    border-radius: 5px;
+    width: 16%;
+    transform: translateX(380px) translateY(380%);
   }
   
   .card-title {
     font-size: 15px;
-    position: relative; 
+    position: relative;
 }
 
 .card-title::after {

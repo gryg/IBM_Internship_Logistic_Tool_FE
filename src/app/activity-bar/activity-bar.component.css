@@ -1,9 +1,10 @@
 mat-form-field{
     position: fixed;
-    top: 120px;
-    right: 30px;
+    top: 3%;
+    right: 5%;
     transform: translate(-50%, 90%);
     text-align: center;
+   
 }
 
 .button-container {
@@ -20,4 +21,30 @@ mat-form-field{
     position: fixed;
     border-top: 15px solid #AEBBFD;
     border-radius: 5px;
+  }
+
+
+
+
+
+  .demo-inline-calendar-card {
+    width: 300px;
+  }
+ 
+  mat-card{
+    position: fixed;
+    top: 28%;
+    left: 73%;
+    border: 15px solid #AEBBFD;
+    border-radius: 8px;
+  }
+  
+  mat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #AEBBFD;
   }

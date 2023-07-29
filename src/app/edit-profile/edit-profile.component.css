@@ -1,56 +1,60 @@
 .edit-profile-popup {
-    width: 250px;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 40;
-    left: 0;
-   
-    z-index: 9999;
-  }
-  
-  .edit-profile-popup h2 {
-    margin-top: 0;
-  }
-  
-  .edit-profile-popup form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .edit-profile-popup label {
-    margin-bottom: 5px;
-  }
-  
-  .edit-profile-popup input[type="text"],
-  .edit-profile-popup input[type="email"],
-  .edit-profile-popup input[type="file"] {
-    margin-bottom: 10px;
-  }
-  
-  .edit-profile-popup button {
-    margin-top: 10px;
-  }
-  
-  form{
-    border: #AEBBFD;
-  }
+  width: 250px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  border-radius: 5px;
+  background-color: #DDE6ED;
+  border: 1px solid #ccc;
+}
 
-  input{
-    border: 6px solid #AEBBFD;
-    border-radius: 5px;
-  }
-  button{
-    background-color:#AEBBFD ;
-    border-radius: 5px;
-    width: 100px;
-    display: flex;
-  justify-content: center;
-  }
-  .save-button{
-    margin-left: 147px;
-  }
-  .close-button{
-    margin-left: 147px;
-  }
+.edit-profile-popup h2 {
+  margin-top: 0;
+}
+
+.edit-profile-popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-profile-popup label {
+  margin-bottom: 5px;
+}
+
+.edit-profile-popup input[type="text"],
+.edit-profile-popup input[type="email"],
+.edit-profile-popup input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.edit-profile-popup button {
+  margin-top: 10px;
+}
+
+form{
+  border: #AEBBFD;
+}
+
+input{
+  border: 6px solid #AEBBFD;
+  border-radius: 5px;
+}
+
+.save-button{
+  margin-left: 170px;
+}
+.close-button{
+  margin-left: 170px;
+}
+
+.edit-profile-button{
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 8px;
+  background-color: rgba(0, 0, 0, 0);
+}

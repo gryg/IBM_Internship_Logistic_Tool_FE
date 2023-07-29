@@ -7,7 +7,7 @@ import { LeaderComponent } from './leader/leader.component';
 import { MentorComponent } from './mentor/mentor.component';
 
 const routes: Routes = [
-  {path: 'login', component:LoginComponent},
+  {path: '', component:LoginComponent,pathMatch:'full'},
   {path: 'student', component:StudentComponent},
   {path: 'leader', component:LeaderComponent},
   {path: 'mentor', component:MentorComponent}
