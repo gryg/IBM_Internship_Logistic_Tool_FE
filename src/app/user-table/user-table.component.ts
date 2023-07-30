@@ -50,7 +50,7 @@ export class UserTableComponent implements OnInit {
     if (this.page === 'leader') {
       this.displayedColumns.push('delete');
     } else if (this.page === 'mentor') {
-      this.displayedColumns.push('showAttendance','showSessions');
+      this.displayedColumns.push('showAttendance','showSessions','showTeamGrade');
     }
   }
 
@@ -85,6 +85,7 @@ export class UserTableComponent implements OnInit {
   }
 selected: Date | null;
 selectedUserForGrade?: User;
+selectedUserForTeamGrade?: User;
 
 
 
@@ -182,6 +183,41 @@ hideGrade() {
   this.selectedUserForGrade = undefined;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+onShowTeamGrade(user: User): void {
+  this.selectedUserForTeamGrade = user;
+}
+
+// Function to hide the team grade popup table
+hideTeamGrade(): void {
+  this.selectedUserForTeamGrade = undefined;
+}
+
+// Function to handle "Submit Team Grade" button click
+onSubmitTeamGrade(): void {
+  if (this.selectedUserForTeamGrade) {
+    for (const session of this.selectedUserForTeamGrade.session || []) {
+      const gradeData = this.gradeChanges[session.session];
+      if (gradeData !== undefined) {
+        session.grade = gradeData.grade;
+        session.comment = gradeData.comment;
+      }
+    }
+    this.gradeChanges = {}; // Reset changes
+    this.hideTeamGrade();
+  }
+}
 
 }
 
