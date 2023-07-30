@@ -4,8 +4,8 @@
   background-color: white;
   box-shadow: 0 2px 4px rgba(237, 230, 230, 0.851);
   position: absolute;
-  top: 70;
-  left: 20%;
+  top: -650%;
+  left: 115%;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 9999;
 }
@@ -47,8 +47,8 @@ input{
 
 .container{
   position: absolute;
-  top: 51%;
-  left: 55%;
+  top: 75%;
+  left: 10%;
 }
 
 .button_img img {
@@ -83,5 +83,5 @@ input{
 }
 
 label{
-color: rgb(251, 253, 255);
+color: rgb(13, 24, 34);
 }

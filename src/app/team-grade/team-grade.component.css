@@ -1,22 +1,22 @@
 .card {
-   
-    
-    background-color:#AEBBFD;
+    background-color: #AEBBFD;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40px;
     padding: 2px;
-    border-top: 3px solid #AEBBFD;
-    border-radius: 5px;
+  
+    top: 50%;
+    left: 6%;
     width: 16%;
     transform: translateX(380px) translateY(380%);
   }
   
+
   .card-title {
     font-size: 15px;
-    position: relative;
-}
+    margin: 0; 
+  }
 
 .card-title::after {
     content: "";
@@ -30,6 +30,11 @@
 }
 
 mat-card.active {
-    background-color: rgb(16, 139, 188);
+    background-color: rgb(118, 146, 136);
     color: rgb(5, 2, 2);
 }
+
+.h1{
+    top:60%;
+}
+

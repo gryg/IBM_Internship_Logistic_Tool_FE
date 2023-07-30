@@ -1,4 +1,17 @@
+
+
 img{
     top:50%;
     transform: translateY(28%);
+}
+
+.allign_grade{
+top :0%;
+left:20%;
+
+}
+
+.allign_name{
+    top :10%;
+    left:30%;
 }

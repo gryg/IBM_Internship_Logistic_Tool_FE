@@ -1,50 +1,50 @@
 mat-form-field{
-    position: fixed;
-    top: 3%;
-    right: 5%;
-    transform: translate(-50%, 90%);
-    text-align: center;
-   
+  position: fixed;
+  top: 2%;
+  right: 4%;
+  transform: translate(-50%, 90%);
+  text-align: center;
+ 
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .back-button {
-    width: auto;
-  }
-  
-  mat-form-field{
-    position: fixed;
-    border-top: 15px solid #AEBBFD;
-    border-radius: 5px;
-  }
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.back-button {
+  width: auto;
+}
+
+mat-form-field{
+  position: fixed;
+  border-top: 15px solid #AEBBFD;
+  border-radius: 5px;
+}
 
 
 
 
 
-  .demo-inline-calendar-card {
-    width: 300px;
-  }
- 
-  mat-card{
-    position: fixed;
-    top: 28%;
-    left: 73%;
-    border: 15px solid #AEBBFD;
-    border-radius: 8px;
-  }
-  
-  mat-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background-color: #AEBBFD;
-  }
+.demo-inline-calendar-card {
+  width: 300px;
+}
+
+mat-card{
+  position: fixed;
+  top: 28%;
+  left: 73%;
+  border: 15px solid #AEBBFD;
+  border-radius: 8px;
+}
+
+mat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: #AEBBFD;
+}

@@ -8,7 +8,8 @@
   border-top: 3px solid #AEBBFD;
   border-radius: 5px;
   width: 20%;
-  left:1.5%;
+  top:50%;
+  left:6%;
   transform: translateY(280%);
 }
 
