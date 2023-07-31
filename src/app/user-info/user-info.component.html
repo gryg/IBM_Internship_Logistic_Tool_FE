@@ -10,9 +10,9 @@
   <ng-template #notMentorPage></ng-template>
   
 
-
   <div class="student-page" *ngIf="isOnStudentPage()">
-    <app-student-gradeing [data]="studentData" *ngIf="showStudentTable" (close)="closeStudentTable()"></app-student-gradeing>
+    <app-student-gradeing [studentData]="receivedStudentsInfo2"*ngIf="showStudentTable"(close)="closeStudentTable()"></app-student-gradeing>
     <button (click)="openStudentTable()" *ngIf="!showStudentTable">Student Activity</button>
     <button (click)="closeStudentTable()" *ngIf="showStudentTable">Close</button>
   </div>
+  

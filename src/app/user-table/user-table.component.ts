@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit,ViewChild  } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { DateAdapter } from '@angular/material/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -87,7 +87,7 @@ selected: Date | null;
 selectedUserForGrade?: User;
 selectedUserForTeamGrade?: User;
 
-
+dataS: User[] = [];
 
 
 attendanceForm: FormGroup;
@@ -197,7 +197,15 @@ hideGrade() {
 
 onShowTeamGrade(user: User): void {
   this.selectedUserForTeamGrade = user;
+
+  // Reset the 'grade' property of each session to an empty string
+  if (this.selectedUserForTeamGrade) {
+    for (const session of this.selectedUserForTeamGrade.session || []) {
+      session.grade = '';
+    }
+  }
 }
+
 
 // Function to hide the team grade popup table
 hideTeamGrade(): void {
@@ -206,17 +214,88 @@ hideTeamGrade(): void {
 
 // Function to handle "Submit Team Grade" button click
 onSubmitTeamGrade(): void {
-  if (this.selectedUserForTeamGrade) {
-    for (const session of this.selectedUserForTeamGrade.session || []) {
-      const gradeData = this.gradeChanges[session.session];
-      if (gradeData !== undefined) {
-        session.grade = gradeData.grade;
-        session.comment = gradeData.comment;
+  if (this.selectedUserForTeamGrade && this.dataS) {
+    const selectedUserSessions = this.selectedUserForTeamGrade.session;
+    if (selectedUserSessions) {
+      for (const session of selectedUserSessions) {
+        const gradeData = this.gradeChanges[session.session];
+        if (gradeData !== undefined) {
+          session.grade = gradeData.grade;
+          session.comment = gradeData.comment;
+        }
       }
     }
+
+    // Update the dataSource with the changes
+    const userIndex = this.dataS.findIndex(user => user === this.selectedUserForTeamGrade);
+    if (userIndex !== -1 && selectedUserSessions) {
+      const updatedSessionArray = [...selectedUserSessions]; // Creating a shallow copy of the session array to trigger change detection
+      this.dataS[userIndex].session = updatedSessionArray;
+    }
+
     this.gradeChanges = {}; // Reset changes
     this.hideTeamGrade();
+
+    // Reassign the updated dataSource to tableDataSource
+    this.tableDataSource = new MatTableDataSource<User>(this.dataSource);
   }
+}
+@ViewChild(UserTableComponent) userTableComponent!: UserTableComponent;
+
+onSaveChanges(): void {
+  // Perform necessary actions to update dataSource (e.g., fetching data from a service)
+  // After updating the dataSource, call the method to save changes in UserTableComponent
+  this.userTableComponent.onSubmitTeamGrade();
+}
+
+
+
+TeamGradeData = [
+  {
+    grades: '1',
+    comments: 'Not Enough'
+  },
+  {
+    grades: '2',
+    comments: 'Not Enough',
+  },
+  {
+    grades: '3',
+    comments: 'Not Enough'
+  },
+  {
+    grades: '4',
+    comments: 'Not Enough'
+  },
+  {
+    grades: '5',
+    comments: 'Ok'
+  },
+  {
+    grades: '6',
+    comments: 'Good',
+  },
+  {
+    grades: '7',
+    comments: 'Good job'
+  },
+  {
+    grades: '8',
+    comments: 'Well done'
+  },
+  {
+    grades: '9',
+    comments: 'Very good'
+  },
+  {
+    grades: '10',
+    comments: 'Excelent'
+  }
+
+];
+getCommentForGrade(grade: string): string {
+  const gradeData = this.TeamGradeData.find(item => item.grades === grade);
+  return gradeData ? gradeData.comments : '';
 }
 
 }

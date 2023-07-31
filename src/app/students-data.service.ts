@@ -1,22 +1,10 @@
-import { Component } from '@angular/core';
-import {StudentsDataService} from '../students-data.service'
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-mentor',
-  templateUrl: './mentor.component.html',
-  styleUrls: ['./mentor.component.css'],
-  providers: [StudentsDataService]
+@Injectable({
+  providedIn: 'root'
 })
-export class MentorComponent {
 
-  /*receivedStudentsDataInfo: string []=[];
-
-  receivedInfo(){
-    this.receivedStudentsDataInfo=this.sservice.getStudentsDataInfo();
-  }
-
-  constructor( private sservice:StudentsDataService){}
-*/
+export class StudentsDataService {
 
   studentsData: any[] = [
     { name: 'John Doe', email: 'john.doe@example.com', joinDate: '2021-01-01', status: 'Leader', attendance:'yes', session: [
@@ -51,5 +39,10 @@ export class MentorComponent {
     ], },
   ];
 
+getStudentsDataInfo():string[]{
+  return this.studentsData;
+}
 
+
+  constructor() { }
 }
